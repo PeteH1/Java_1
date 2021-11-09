@@ -6,6 +6,14 @@ public class Menu {
 
 	Scanner scan = new Scanner(System.in);
 
+	public static void nicetype(String message) throws InterruptedException {
+		char[] chars = message.toCharArray();
+		for (int i = 0; i < chars.length; i++) {
+			System.out.print(chars[i]);
+			Thread.sleep(60);
+		}
+	}
+
 	public void menu() {
 
 		boolean menuCheck = true;
@@ -13,17 +21,22 @@ public class Menu {
 		int num2;
 		int menuChoice;
 
-		System.out.println("HeLlO aNd WeLcOmE tO pEtE's WoNdErFuL cAlCuLaToR pRoGrAm!!!!!!1!!");
+		String welcome = "HeLlO aNd WeLcOmE tO pEtE's WoNdErFuL cAlCuLaToR pRoGrAm!!!!!!1!!";
+		try {
+			nicetype(welcome);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 
 		while (menuCheck) {
-			System.out.println("And what operation would you like to perform?");
-			System.out.println("=".repeat(50));
-			System.out.println("\t1). Addition");
-			System.out.println("\t2). Subtraction");
-			System.out.println("\t3). Multiplication");
-			System.out.println("\t4). Division");
-			System.out.println("=".repeat(50));
-			System.out.println("\tEnter any other number to exit.");
+
+			String menuText = "\nAnd what operation would you like to perform?\n\t1). Addition\n"
+					+ "\t2). Subtraction\n\t3). Multiplication\n\t4). Division\n\tEnter any other number to exit.\n";
+			try {
+				nicetype(menuText);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 
 			menuChoice = scan.nextInt();
 			scan.nextLine();
