@@ -1,5 +1,6 @@
 package com.qa.calculatortask;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Menu {
@@ -10,7 +11,9 @@ public class Menu {
 		char[] chars = message.toCharArray();
 		for (int i = 0; i < chars.length; i++) {
 			System.out.print(chars[i]);
-			Thread.sleep(60);
+			Random r = new Random();
+			int pause = r.nextInt(150 - 20) + 20;
+			Thread.sleep(pause);
 		}
 	}
 
