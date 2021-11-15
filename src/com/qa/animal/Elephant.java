@@ -1,6 +1,6 @@
 package com.qa.animal;
 
-public class Elephant extends Animal {
+public class Elephant extends Animal implements Mammal {
 
 	private boolean hasBigTrunk = true;
 	private boolean sometimesforgets = false;
@@ -50,6 +50,11 @@ public class Elephant extends Animal {
 
 	public void setInRoom(boolean isInRoom) {
 		this.isInRoom = isInRoom;
+	}
+
+	@Override
+	public void beAMammal() {
+		System.out.println("I am a big mammal.");
 	}
 
 }

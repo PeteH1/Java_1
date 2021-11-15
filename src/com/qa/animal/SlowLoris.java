@@ -1,6 +1,6 @@
 package com.qa.animal;
 
-public class SlowLoris extends Animal {
+public class SlowLoris extends Animal implements Mammal {
 
 	private boolean isCute = true;
 	private String eyeSize = "big";
@@ -39,6 +39,11 @@ public class SlowLoris extends Animal {
 
 	public void setEyeSize(String eyeSize) {
 		this.eyeSize = eyeSize;
+	}
+
+	@Override
+	public void beAMammal() {
+		System.out.println("I am a small mammal.");
 	}
 
 }
